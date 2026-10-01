@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halite gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/halite.css">
+<style>
+  body{margin:0}
+  .page{max-width:520px;margin:0 auto;padding:16px 0 48px}
+  .page>*{margin-left:16px;margin-right:16px}
+  .page h1{font-size:22px;margin:8px 16px 4px}
+  .page>p{color:var(--salt-muted);margin-top:0;font-size:14px}
+  .block{margin-top:26px}
+  .stack>*+*{margin-top:10px}
+  .bar{display:flex;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body class="h-root">
+<main class="page">
+  <div class="bar">
+    <h1>Halite</h1>
+    <button class="h-button small" id="theme" style="margin-right:0">Dark</button>
+  </div>
+  <p>Every component below uses only <code>css/halite.css</code>.</p>
+
+  <section class="block">
+    <h2 class="h-label">Buttons</h2>
+    <div class="stack">
+      <button class="h-button">Primary</button>
+      <button class="h-button quiet">Quiet</button>
+      <button class="h-button danger">Danger</button>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="h-button small">Small</button>
+        <button class="h-button small" aria-pressed="true">Selected</button>
+        <button class="h-button link">Link</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">Fields <span>mono aside</span></h2>
+    <label class="h-field" for="f1" style="margin-top:0">Name</label>
+    <input class="h-input" id="f1" value="Ada">
+    <label class="h-field" for="f2">About</label>
+    <textarea class="h-input" id="f2" rows="2" placeholder="A line about you"></textarea>
+    <div style="height:14px"></div>
+    <div class="h-composer"><input aria-label="Message" placeholder="Say something"><button>Send</button></div>
+    <div style="height:10px"></div>
+    <div class="h-composer quiet"><input aria-label="Reply" placeholder="Quiet composer"><button>Add</button></div>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">Chips and tags</h2>
+    <div class="h-chips"><button class="h-chip">Remind me</button><button class="h-chip">Summarise</button><button class="h-chip">Translate</button></div>
+    <p style="margin:12px 0 0"><span class="h-tag">Idle</span> <span class="h-tag brand">Agent</span></p>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">List group</h2>
+    <div class="h-group">
+      <button class="h-row">
+        <svg class="h-ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
+        <span class="t"><b>Profile</b><small>Name and photo</small></span><span class="v">Ada</span>
+        <svg class="h-ic chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <button class="h-row">
+        <svg class="h-ic" viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>
+        <span class="t"><b>Running task</b><small>Started a minute ago</small></span><span class="v mono"><span class="h-run"></span>12s</span>
+        <svg class="h-ic chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <div class="h-row">
+        <svg class="h-ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+        <span class="t"><b>Notifications</b><small>Static row with a switch</small></span>
+        <button class="h-switch" role="switch" aria-checked="false" id="sw" style="background:none;border:0;padding:0"><span class="track"><i></i></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">Options</h2>
+    <div class="h-group" id="opts">
+      <button class="h-option" role="radio" aria-checked="true"><b>Everyone</b><small>Anyone can see</small><svg class="h-ic" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="h-option" role="radio" aria-checked="false"><b>Contacts</b><small>People you know</small><svg class="h-ic" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="h-option" role="radio" aria-checked="false"><b>Nobody</b><svg class="h-ic" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">Avatars</h2>
+    <div style="display:flex;gap:18px;align-items:center;padding:4px">
+      <span class="h-avatar letter" style="width:40px;height:40px;font-size:15px;--h-tint:#CFE0FF">A</span>
+      <span class="h-avatar-wrap"><span class="h-avatar letter" style="width:48px;height:48px;font-size:18px;--h-tint:#FBE0CC">B</span><span class="h-pres" data-status="online"></span></span>
+      <span class="h-avatar-wrap"><span class="h-avatar letter" style="width:48px;height:48px;font-size:18px;--h-tint:#D5F0DC">C</span><span class="h-pres" data-status="away"></span></span>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h-label">Stage and hero</h2>
+    <div class="h-stage" style="height:150px;--h-tint:#CFE0FF"><span class="h-stage-tag"><i></i>IDLE</span><div class="h-stage-body"></div></div>
+    <div class="h-stage busy" style="height:110px;margin-top:10px;--h-tint:#FBE0CC"><span class="h-stage-tag busy"><i></i>DRAWING</span><div class="h-stage-body"></div></div>
+    <div class="h-hero" style="--h-tint:#D5F0DC;margin-top:24px">
+      <div class="h-portrait"><span class="h-avatar letter" style="width:104px;height:104px;font-size:38px;display:grid">P</span><span class="ground"></span></div>
+      <h1><span>Pepper</span></h1>
+      <p class="h-sub">@pepper <span class="h-tag brand">Agent</span></p>
+    </div>
+    <div class="h-quick">
+      <button class="h-qa"><span class="c"><svg class="h-ic" viewBox="0 0 24 24"><path d="M5 5h14v10H8l-3 3z"/></svg></span><b>Message</b></button>
+      <button class="h-qa" aria-pressed="true"><span class="c"><svg class="h-ic" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.500-7 10-7 10z"/></svg></span><b>Follow</b></button>
+      <button class="h-qa"><span class="c"><svg class="h-ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><b>Add</b></button>
+    </div>
+  </section>
+</main>
+<script>
+  var root = document.documentElement, btn = document.getElementById('theme');
+  btn.onclick = function () {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    btn.textContent = dark ? 'Dark' : 'Light';
+  };
+  if (location.hash === '#dark') { root.setAttribute('data-theme', 'dark'); btn.textContent = 'Light'; }
+  var sw = document.getElementById('sw');
+  sw.onclick = function () { var on = sw.getAttribute('aria-checked') !== 'true'; sw.setAttribute('aria-checked', on); sw.toggleAttribute('data-selected', on); };
+  document.querySelectorAll('#opts .h-option').forEach(function (o) {
+    o.onclick = function () { document.querySelectorAll('#opts .h-option').forEach(function (x) { x.setAttribute('aria-checked', x === o); }); };
+  });
+</script>
+</body>
+</html>
